@@ -1,9 +1,10 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-section-title title="PERSONAL ONLINE"></app-section-title>
-
-  <app-card-treino></app-card-treino>
-
-  <app-section-title title="PROGRAMAS"></app-section-title>
+  @for (cardDT of cardData; track cardDT) {
+    <app-section [section]="cardDT"></app-section>
+  } 
+  @empty {
+    <p>Nenhum dado encontrado</p>
+  }
 </ion-content>

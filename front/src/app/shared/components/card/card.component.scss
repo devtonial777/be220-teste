@@ -1,0 +1,104 @@
+.card {
+  // Dimensões e Layout Base
+  position: relative;
+  min-width: 220px;
+  height: 140px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  
+  // Estilização Visual
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease;
+
+  // Estados Interativos
+  &:active {
+    transform: scale(0.97);
+  }
+
+  // Elementos Internos (Overlay)
+  .overlay {
+    position: absolute;
+    inset: 0;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.2)
+    );
+
+    // Tipografia básica dentro do overlay
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: orange;
+      margin-bottom: 2px;
+    }
+  }
+
+  // Modos/Variantes (Usando o seletor de classe pai)
+  &.create-mode {
+    .overlay {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .create {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border: solid 1px #FFF;
+        background-color: transparent;
+        color: #FFF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2; 
+        white-space: normal;
+        overflow-wrap: break-word;
+        text-align: left;
+      }
+    }
+  }
+
+  &.progress-mode {
+    .overlay {
+      justify-content: flex-end;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.1)
+      );
+    }
+
+    .progress {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

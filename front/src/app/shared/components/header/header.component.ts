@@ -4,7 +4,6 @@ import { IonIcon, IonHeader } from '@ionic/angular/standalone';
 // ionic icons
 import { addIcons } from 'ionicons';
 import { menuOutline, addCircleOutline, trophyOutline, notificationsOutline  } from 'ionicons/icons';
-
 addIcons({
   'menu-outline': menuOutline,
   'add-circle-outline': addCircleOutline,

@@ -1,0 +1,57 @@
+.section {
+  margin: 20px;
+
+  // Estado Desabilitado
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  // 1. Header da Seção
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    margin-bottom: 12px;
+    color: #fff;
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .add-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background-color: transparent;
+      border: solid 1px orange;
+      border-radius: 50%;
+      color: orange;
+      flex-shrink: 0;
+      cursor: pointer;
+
+      ion-icon {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 2. Container de Scroll Horizontal
+  .scroll {
+    display: flex;
+    gap: 15px;
+    padding: 0 16px 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; // iOS (scroll suave)
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

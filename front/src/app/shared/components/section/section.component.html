@@ -1,0 +1,39 @@
+<div class="section" [class.disabled]="section.disabled">
+
+  <!-- HEADER -->
+  <div class="section-header">
+    <h3>{{ section.titulo }}</h3>
+
+    <button *ngIf="showAddButton" class="add-btn">
+      <ion-icon name="add-outline"></ion-icon>
+    </button>
+  </div>
+
+  <!-- SCROLL -->
+  <div class="scroll">
+    @for(card of section.cards; track card) {
+      <ng-container [ngSwitch]="card.type">
+
+        <app-card
+          *ngSwitchCase="'create'"
+          [card]="card">
+        </app-card>
+
+        <app-card
+          *ngSwitchCase="'progress'"
+          [card]="card">
+        </app-card>
+
+        <app-content-card
+          *ngSwitchCase="'content'">
+        </app-content-card>
+
+      </ng-container>
+    } 
+    @empty {
+      <p>Nenhum conteúdo encontrado</p>
+    }
+    
+  </div>
+
+</div>
